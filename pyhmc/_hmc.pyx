@@ -106,7 +106,7 @@ def hmc_main_loop(fun, double[::1] x, args, double[::1] p,
                     # p = p - direction*epsilon.*feval(gradf, x, varargin{:});
                     logp, grad = fun(asarray(x), *args)
                     for i in range(n_params):
-                        p[i] +=  direction * 0.5 * epsilon * grad[i]
+                        p[i] +=  direction * epsilon * grad[i]
                     for i in range(n_params):
                         x[i] += direction * epsilon * p[i]
 
